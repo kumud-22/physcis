@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ENERGYVERSE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="stars"></div>
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+
+    <header class="topbar glass">
+      <div class="brand-wrap">
+        <div class="brand-mark">E</div>
+        <div>
+          <p class="eyebrow">FUTURE SCIENCE LAB</p>
+          <h1>ENERGYVERSE</h1>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#simulator">Simulator</a>
+        <a href="#lab">3D Lab</a>
+        <a href="#experiments">Experiments</a>
+        <a href="#assistant">AI Assistant</a>
+        <a href="#quiz">Quiz</a>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <section class="hero glass">
+        <div class="hero-text">
+          <p class="eyebrow accent">The journey of energy</p>
+          <h2>Transformations that power our world</h2>
+          <p>
+            Explore how energy morphs from sunlight, fuel, motion, and electricity into the everyday
+            machines and systems that shape modern life.
+          </p>
+          <div class="hero-actions">
+            <button class="primary-btn">Launch Explorer</button>
+            <button class="ghost-btn">See Challenge</button>
+          </div>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-card">
+            <span class="stat-label">Energy Forms</span>
+            <strong>12</strong>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Systems</span>
+            <strong>10</strong>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Efficiency</span>
+            <strong id="overall-efficiency">82%</strong>
+          </div>
+        </div>
+      </section>
+
+      <section id="simulator" class="panel glass">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow accent">Interactive Energy Conversion Simulator</p>
+            <h3>Choose an energy system</h3>
+          </div>
+        </div>
+
+        <div id="device-grid" class="device-grid"></div>
+
+        <div class="simulator-layout">
+          <div class="device-stage glass-subtle">
+            <div class="stage-header">
+              <div>
+                <p class="eyebrow subtle">Selected device</p>
+                <h4 id="device-name">Electric Bulb</h4>
+              </div>
+              <span id="device-badge" class="device-badge">💡</span>
+            </div>
+
+            <div id="device-visual" class="device-visual"></div>
+
+            <div class="device-copy">
+              <p id="device-description"></p>
+            </div>
+          </div>
+
+          <div class="flow-panel glass-subtle">
+            <div class="flow-title-row">
+              <p class="eyebrow subtle">Energy flow</p>
+              <span id="efficiency-pill" class="efficiency-pill">Efficiency 85%</span>
+            </div>
+            <div id="flow-diagram" class="flow-diagram"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="lab" class="panel glass">
+        <div class="section-head compact">
+          <div>
+            <p class="eyebrow accent">3D Laboratory</p>
+            <h3>Explore the energy workshop</h3>
+          </div>
+        </div>
+
+        <div class="lab-scene">
+          <div class="lab-room">
+            <div class="floor-grid"></div>
+            <button class="lab-object solar" data-device="solar">
+              <span class="object-label">Solar Panel</span>
+            </button>
+            <button class="lab-object turbine" data-device="wind">
+              <span class="object-label">Wind Turbine</span>
+            </button>
+            <button class="lab-object bulb" data-device="bulb">
+              <span class="object-label">Light Bulb</span>
+            </button>
+            <button class="lab-object battery" data-device="battery">
+              <span class="object-label">Battery</span>
+            </button>
+            <button class="lab-object dam" data-device="dam">
+              <span class="object-label">Dam</span>
+            </button>
+            <button class="lab-object engine" data-device="engine">
+              <span class="object-label">Car Engine</span>
+            </button>
+            <button class="lab-object body" data-device="body">
+              <span class="object-label">Human Body</span>
+            </button>
+            <button class="lab-object speaker" data-device="speaker">
+              <span class="object-label">Microphone</span>
+            </button>
+            <button class="lab-object plant" data-device="plant">
+              <span class="object-label">Plant</span>
+            </button>
+            <button class="lab-object toy" data-device="toy">
+              <span class="object-label">Toy Car</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="experiments" class="panel glass">
+        <div class="section-head compact">
+          <div>
+            <p class="eyebrow accent">Real-time Experiment Controls</p>
+            <h3>Adjust the system variables</h3>
+          </div>
+        </div>
+
+        <div class="experiment-grid">
+          <div class="control-panel glass-subtle">
+            <label class="slider-control">
+              <span>Solar panel light intensity</span>
+              <div class="inline-row">
+                <input id="solarIntensity" type="range" min="0" max="100" value="72" />
+                <strong id="solarIntensityValue">72%</strong>
+              </div>
+            </label>
+
+            <label class="slider-control">
+              <span>Wind speed</span>
+              <div class="inline-row">
+                <input id="windSpeed" type="range" min="0" max="100" value="64" />
+                <strong id="windSpeedValue">64%</strong>
+              </div>
+            </label>
+
+            <label class="slider-control">
+              <span>Water flow rate</span>
+              <div class="inline-row">
+                <input id="waterFlow" type="range" min="0" max="100" value="76" />
+                <strong id="waterFlowValue">76%</strong>
+              </div>
+            </label>
+
+            <label class="slider-control">
+              <span>Electrical input to a motor</span>
+              <div class="inline-row">
+                <input id="motorInput" type="range" min="0" max="100" value="58" />
+                <strong id="motorInputValue">58%</strong>
+              </div>
+            </label>
+          </div>
+
+          <div class="output-panel glass-subtle">
+            <p class="eyebrow subtle">Conservation demo</p>
+            <div class="bars-wrap">
+              <div class="energy-row">
+                <span>Useful output</span>
+                <div class="bar-shell"><div id="usefulBar" class="bar-fill good"></div></div>
+                <strong id="usefulValue">75%</strong>
+              </div>
+
+              <div class="energy-row">
+                <span>Surroundings</span>
+                <div class="bar-shell"><div id="surroundingsBar" class="bar-fill warn"></div></div>
+                <strong id="surroundingsValue">25%</strong>
+              </div>
+
+              <div class="energy-row">
+                <span>Stored energy</span>
+                <div class="bar-shell"><div id="storedBar" class="bar-fill cool"></div></div>
+                <strong id="storedValue">50%</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="assistant" class="panel glass">
+        <div class="section-head compact">
+          <div>
+            <p class="eyebrow accent">AI Science Assistant</p>
+            <h3>Ask about energy transformations</h3>
+          </div>
+        </div>
+
+        <div class="assistant-panel">
+          <div id="assistant-chat" class="assistant-chat"></div>
+          <div class="assistant-prompts">
+            <button class="prompt-chip" data-prompt="What conversions happen in this device?">What conversions happen?</button>
+            <button class="prompt-chip" data-prompt="Why is some energy transferred to the surroundings?">Why is some energy lost?</button>
+            <button class="prompt-chip" data-prompt="How can efficiency be improved?">How improve efficiency?</button>
+            <button class="prompt-chip" data-prompt="Where does this happen in everyday life?">Everyday examples</button>
+          </div>
+          <div class="assistant-input-row">
+            <input id="assistantInput" type="text" placeholder="Ask the science assistant..." />
+            <button id="askAssistant" class="primary-btn small">Ask</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="quiz" class="panel glass">
+        <div class="section-head compact">
+          <div>
+            <p class="eyebrow accent">Quiz and Challenge Mode</p>
+            <h3>Identify the energy conversion</h3>
+          </div>
+        </div>
+
+        <div id="quiz-card" class="quiz-card"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
